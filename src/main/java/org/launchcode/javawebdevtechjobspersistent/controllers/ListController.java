@@ -20,8 +20,10 @@ import java.util.HashMap;
 @Controller
 @RequestMapping(value = "list")
 public class ListController {
+
     @Autowired
     EmployerRepository employerRepository;
+
     @Autowired
     SkillRepository skillRepository;
 
@@ -56,7 +58,6 @@ public class ListController {
             model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
         }
         model.addAttribute("jobs", jobs);
-
         return "list-jobs";
     }
 }
